@@ -1,197 +1,149 @@
-/* Base styles for the body */
+/* Body styling */
 body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #200122, #6f0000); /* Gradient background */
-    color: #fff;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
+  font-family: "Arial", sans-serif;
+  background: #f5f5f5;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 /* Chat container styling */
 .chat-container {
-    width: 100%;
-    max-width: 600px;
-    background: #EB5757;
-    border-radius: 15px;
-    padding: 20px;
-    box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.3);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 80vh;
-    border: 2px solid #da4804;
+  width: 100%;
+  max-width: 400px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  height: 80vh;
 }
 
-/* Styling for the username heading */
-#username-heading {
-    text-align: center;
-    font-size: 28px;
-    color: #0cdbe2;
-    margin-bottom: 20px;
-    font-weight: bold;
-    display: none;
+/* Heading styling */
+#chat-heading {
+  font-size: 24px;
+  font-weight: bold;
+  color: #3498db;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
 /* Username input container */
 #username-container {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
 #username-input {
-    flex: 1;
-    padding: 12px;
-    border-radius: 25px;
-    border: 2px solid #4CAF50;
-    margin-right: 10px;
-    font-size: 14px;
-    background: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  flex: 1;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  transition: border 0.3s ease;
 }
 
 #username-input:focus {
-    border-color: #FFEB3B;
-    box-shadow: 0 0 10px #FFEB3B;
+  border-color: #3498db;
+  outline: none;
 }
 
-/* Button styling */
 button {
-    background-color: #FFEB3B;
-    color: #333;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 button:hover {
-    background-color: #FFC107;
-    transform: scale(1.05);
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
-/* Styling for the messages area */
+/* Message list styling */
 #messages {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    overflow-y: auto;
-    height: 60%;
-    flex-grow: 1;
-    padding-right: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+  overflow-y: auto;
 }
 
 /* Message item styling */
 #messages li {
-    padding: 15px 20px;
-    border-radius: 20px;
-    margin: 5px 0;
-    max-width: 80%;
-    position: relative;
-    background-color: #A5D6A7;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
-    opacity: 0;
-    animation: fadeInMessage 0.5s forwards;
+  padding: 12px 15px;
+  border-radius: 20px;
+  margin: 10px 0;
+  max-width: 75%;
+  font-size: 14px;
+  position: relative;
 }
 
-/* Sent message styling */
+/* Styling for sent messages */
 #messages li.sent {
-    background: #388E3C;
-    color: #fff;
-    margin-left: auto;
-    animation: fadeInMessage 0.5s forwards 0.2s;
+  background-color: #3498db;
+  color: white;
+  margin-left: auto;
 }
 
-/* Received message styling */
+/* Styling for received messages */
 #messages li.received {
-    background: #A5D6A7;
-    color: #333;
+  background-color: #ecf0f1;
+  color: #333;
 }
 
-/* Decorative dot before received messages */
-#messages li:before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 10px;
-    height: 10px;
-    background: #FFEB3B;
-    border-radius: 50%;
-    left: -20px;
-}
-
-/* Input field for messages */
+/* Input for typing messages */
 #message-input {
-    flex: 8;
-    padding: 12px;
-    border-radius: 20px;
-    border: 2px solid #4CAF50;
-    background: #f9f9f9;
-    color: #333;
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  padding: 10px 15px;
+  font-size: 16px;
+  border-radius: 20px;
+  border: 1px solid #ddd;
+  flex-grow: 1;
+  transition: border 0.3s ease;
 }
 
 #message-input:focus {
-    border-color: #FFEB3B;
-    box-shadow: 0 0 10px #FFEB3B;
+  border-color: #3498db;
+  outline: none;
 }
 
-/* The send button for messages */
+/* Chat form styling */
 #chat-form {
-    display: flex;
-    margin-top: 20px;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 }
 
+/* Send button styling */
 #chat-form button {
-    background-color: #FFEB3B;
-    color: #333;
-    border: none;
-    padding: 12px 25px;
-    border-radius: 25px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s;
 }
 
 #chat-form button:hover {
-    background-color: #FFC107;
-    transform: scale(1.05);
+  background-color: #2980b9;
+  transform: scale(1.05);
 }
 
-/* "No Messages Yet" text styling */
-#no-messages {
-    display: none;
-    text-align: center;
-    color: #000000;
-    font-size: 18px;
-    padding: 20px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
+/* Scrollbar styling for messages */
+#messages::-webkit-scrollbar {
+  width: 8px;
 }
 
-/* Smooth transition for the chat area */
-#messages {
-    transition: all 0.3s ease-in-out;
-}
-
-/* Keyframes for fade-in animation */
-@keyframes fadeInMessage {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+#messages::-webkit-scrollbar-thumb {
+  background-color: #3498db;
+  border-radius: 10px;
 }
